@@ -31,8 +31,4 @@ const onFullfilled = (config: AxiosRequestConfig): AxiosRequestConfig => {
   return config;
 };
 
-const requestLogger = () => (config: AxiosRequestConfig): AxiosRequestConfig => {
-  return onFullfilled(config);
-};
-
-export default requestLogger;
+export default onFullfilled;

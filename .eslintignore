@@ -1,5 +1,8 @@
+webpack.config.js
+
 # testing
 /coverage
 
 # production
 /lib
+/dist
