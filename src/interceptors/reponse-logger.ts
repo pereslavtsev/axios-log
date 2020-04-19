@@ -36,8 +36,4 @@ const onFullfilled = (response: AxiosResponse): AxiosResponse => {
   return response;
 };
 
-const responseLogger = () => (response: AxiosResponse): AxiosResponse => {
-  return onFullfilled(response);
-};
-
-export default responseLogger;
+export default onFullfilled;
