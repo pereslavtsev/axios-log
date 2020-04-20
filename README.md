@@ -1,4 +1,4 @@
-# axios-logger
+# axios-log
 
 ![npm](https://img.shields.io/npm/v/axios-log)
 ![npm](https://img.shields.io/npm/l/axios-log)
@@ -12,12 +12,12 @@ You should install `axios-log` as a development dependency. Don't use that in pr
 Using npm:
 ```
 $ npm i axios
-$ npm i -D axios-logger
+$ npm i -D axios-log
 ```
 Using yarn:
 ```
 $ yarn add axios
-$ yarn add -D axios-logger
+$ yarn add -D axios-log
 ```
 
 ## How to use
