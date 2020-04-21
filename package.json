@@ -4,7 +4,6 @@
   "description": "Easy way to log all Axios calls",
   "main": "dist/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
   "files": [
     "dist",
     "lib"
