@@ -76,3 +76,21 @@ import { responseLogger } from 'axios-log';
 const api = axios.create();
 api.interceptors.response.use(responseLogger);
 ```
+
+## Contributing
+
+ 1. **Clone** the project to your own machine;
+ 2. **Checkout** a new branch from `master`;
+ 3. **Run** a demo project:
+    1. Install all package dependencies via npm: `npm i`<br/>or using yarn: `yarn`;
+    2. Build the bundle in development mode: `npm run dev` or `yarn dev`;
+    3. Link a current bundle location: `npm link`;
+    4. Open a new terminal tab and change directory to demo: `cd demo`.<br/>
+       There is a simple React-based app, but you can use any other repo for testing;
+    5. Install demo dependencies in the same way as the library;
+    6. Link `axios-log` package via `npm link axios-log`;
+    7. Run the demo project via `npm start` or `yarn start`.<br/>
+       Now any change from library source code will be applied in the demo project;
+ 3. **Commit** changes to your own branch;
+ 4. **Push** your work back up to your fork;
+ 5. Submit a **Pull request** so that we can review your changes.
