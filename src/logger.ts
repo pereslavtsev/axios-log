@@ -84,7 +84,7 @@ class Logger {
 
     // create title args
     const title = typeof o === 'string' ? o : o.title;
-    let titleStyles = 'font-weight: lighter; ';
+    let titleStyles = 'font-family: sans-serif; font-weight: lighter; ';
     if (typeof o === 'object' && o.titleStyle) {
       titleStyles += o.titleStyle;
     }
