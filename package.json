@@ -9,8 +9,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack",
-    "dev": "webpack-dev-server",
+    "build": "rimraf lib dist && webpack",
+    "dev": "webpack-dev-server --no-inline",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
     "lint:fix": "yarn lint --fix",
     "release": "standard-version --no-verify",
