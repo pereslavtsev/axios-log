@@ -6,7 +6,7 @@
 
 > Easy way to log all Axios calls
 
-![Alt text](demo/src/screenshot.gif?raw=true)
+![Alt text](demo/src/screenshot.gif?raw=true 'Screenshot')
 
 ## Install
 
