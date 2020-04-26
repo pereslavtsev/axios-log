@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import * as HttpStatus from 'http-status-codes';
 import {
   createMethodStyles,
   getFullUrl,
@@ -22,7 +23,10 @@ const onFullfilled = (response: AxiosResponse): AxiosResponse => {
     log.group('General', () => {
       log.log('Request URL:', `${fullUrl}`);
       log.log('Request Method:', method?.toUpperCase());
-      log.log('Status Code:', `${status} ${statusText ? statusText : ''}`);
+      log.log(
+        'Status Code:',
+        `${status} ${statusText ? statusText : HttpStatus.getStatusText(status)}`,
+      );
     });
     logRequestHeaders(config);
     log.group({ title: 'Response Headers', collapsed: true }, () => {
