@@ -42,6 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/dateformat": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^2.28.0",
     "@typescript-eslint/parser": "^2.28.0",
     "axios": "^0.19.2",
@@ -70,6 +71,7 @@
     }
   },
   "dependencies": {
+    "dateformat": "^3.0.3",
     "http-status-codes": "^1.4.0"
   }
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Accordion, Container, Button, Form } from 'react-bootstrap';
 
 import styles from './App.module.css'
-import screenshotImg from './screenshot.gif'
+import screenshotImg from '../screenshot.gif'
 
 function App() {
   const handleGet = React.useCallback(async () => await axios.get('/users'), []);
