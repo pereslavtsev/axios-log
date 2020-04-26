@@ -1,6 +1,8 @@
 import { AxiosResponse } from 'axios';
+import * as HttpStatus from 'http-status-codes';
 import {
   createMethodStyles,
+  getFullUrl,
   log,
   logQSParameters,
   logRequestData,
@@ -9,18 +11,22 @@ import {
 
 const onFullfilled = (response: AxiosResponse): AxiosResponse => {
   const { config, data, headers, status, statusText } = response;
-  const { method, baseURL, url } = config;
+  const { method } = config;
+  const fullUrl = getFullUrl(config);
 
-  const title = `response%c %c${method?.toUpperCase()}%c ${baseURL}${url}`;
+  const title = `response%c %c${method?.toUpperCase()}%c ${fullUrl}`;
   const titleStyle = 'color: gray; font-weight: lighter';
   const styles = [method ? createMethodStyles(method) : '', '', ''];
 
   log.group({ title, titleStyle, styles }, () => {
     // General Info
     log.group('General', () => {
-      log.log('Request URL:', `${baseURL}${url}`);
+      log.log('Request URL:', `${fullUrl}`);
       log.log('Request Method:', method?.toUpperCase());
-      log.log('Status Code:', `${status} ${statusText}`);
+      log.log(
+        'Status Code:',
+        `${status} ${statusText ? statusText : HttpStatus.getStatusText(status)}`,
+      );
     });
     logRequestHeaders(config);
     log.group({ title: 'Response Headers', collapsed: true }, () => {

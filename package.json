@@ -1,6 +1,6 @@
 {
   "name": "axios-log",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easy way to log all Axios calls",
   "main": "dist/index.js",
   "types": "lib/index.d.ts",
@@ -9,9 +9,9 @@
     "lib"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack",
-    "dev": "webpack-dev-server",
-    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "build": "rimraf lib dist && webpack",
+    "dev": "webpack-dev-server --no-inline",
+    "lint": "eslint --ext .ts --ignore-path .gitignore . --ignore-pattern demo",
     "lint:fix": "yarn lint --fix",
     "release": "standard-version --no-verify",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -64,12 +64,12 @@
   "peerDependencies": {
     "axios": "*"
   },
-  "lint-staged": {
-    "*.ts": "eslint --cache --fix"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "http-status-codes": "^1.4.0"
   }
 }
