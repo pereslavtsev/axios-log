@@ -1,25 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
-import { requestLogger, responseLogger } from 'axios-log';
-import { Container, Button, Form } from 'react-bootstrap';
+import { Accordion, Container, Button, Form } from 'react-bootstrap';
 
-axios.interceptors.request.use(requestLogger);
-axios.interceptors.response.use(responseLogger);
-
-const mock = new MockAdapter(axios);
-
-mock
-  .onGet('/users')
-  .reply(200, {
-    users: [{ id: 1, name: 'John Smith' }],
-  })
-  .onPost('/users')
-  .reply(201, { id: 1, name: 'John Smith' })
-  .onPut('/users/1')
-  .reply(202, { name: 'Smith John' })
-  .onDelete('/users/1')
-  .reply(204, true);
+import styles from './App.module.css'
+import screenshotImg from './screenshot.gif'
 
 function App() {
   const handleGet = React.useCallback(async () => await axios.get('/users'), []);
@@ -45,6 +29,14 @@ function App() {
             DELETE
           </Button>
         </Form.Group>
+        <Accordion>
+          <Accordion.Toggle as={Button} variant="link" eventKey="0">
+            See demo
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="0">
+            <img className={styles.demo} src={screenshotImg} alt="demo" />
+          </Accordion.Collapse>
+        </Accordion>
       </Form>
     </Container>
   );
