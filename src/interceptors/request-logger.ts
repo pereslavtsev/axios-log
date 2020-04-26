@@ -5,19 +5,21 @@ import {
   logQSParameters,
   logRequestData,
   createMethodStyles,
+  getFullUrl,
 } from '../helpers';
 
 const onFullfilled = (config: AxiosRequestConfig): AxiosRequestConfig => {
-  const { method, baseURL, url } = config;
+  const { method } = config;
 
-  const title = `request%c %c${method?.toUpperCase()}%c ${baseURL}${url}`;
+  const fullUrl = getFullUrl(config);
+  const title = `request%c %c${method?.toUpperCase()}%c ${fullUrl}`;
   const titleStyle = 'color: gray; font-weight: lighter';
   const styles = [method ? createMethodStyles(method) : '', '', ''];
 
   log.group({ title, titleStyle, styles }, () => {
     // General Info
     log.group('General', () => {
-      log.log('Request URL:', `${baseURL}${url}`);
+      log.log('Request URL:', `${fullUrl}`);
       log.log('Request Method:', method?.toUpperCase());
     });
 

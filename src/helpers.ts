@@ -3,6 +3,10 @@ import Logger from './logger';
 
 export const log = new Logger();
 
+export const getFullUrl = ({ baseURL, url }: AxiosRequestConfig): string | undefined => {
+  return baseURL ? baseURL : '' + url ? url : '';
+};
+
 export const logRequestHeaders = ({ method, headers }: AxiosRequestConfig): void => {
   const headersCount = typeof headers === 'object' ? Object.keys(headers).length : null;
   const title = `Request Headers ${headersCount ? `(${headersCount})` : ''}`;
