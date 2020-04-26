@@ -4,9 +4,9 @@
 ![npm](https://img.shields.io/npm/l/axios-log)
 ![npm](https://img.shields.io/circleci/build/github/pereslavtsev/axios-log)
 
-![Alt text](demo/src/screenshot.gif?raw=true 'Screenshot')
-
 > Easy way to log all Axios calls
+
+![Alt text](demo/src/screenshot.gif?raw=true 'Screenshot')
 
 ## Install
 
