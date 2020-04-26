@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
+import dateFormat from 'dateformat';
 import {
   log,
   logRequestHeaders,
@@ -12,9 +13,15 @@ const onFullfilled = (config: AxiosRequestConfig): AxiosRequestConfig => {
   const { method } = config;
 
   const fullUrl = getFullUrl(config);
-  const title = `request%c %c${method?.toUpperCase()}%c ${fullUrl}`;
+  const date = dateFormat();
+  const title = `response%c %c${method?.toUpperCase()}%c ${fullUrl} %c${date}`;
   const titleStyle = 'color: gray; font-weight: lighter';
-  const styles = [method ? createMethodStyles(method) : '', '', ''];
+  const styles = [
+    method ? createMethodStyles(method) : '',
+    '',
+    `${titleStyle}; font-family: sans-serif;`,
+    '',
+  ];
 
   log.group({ title, titleStyle, styles }, () => {
     // General Info
